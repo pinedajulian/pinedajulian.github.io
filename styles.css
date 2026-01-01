@@ -13,7 +13,7 @@ a {
 
 .column a {
   text-decoration: underline;
-  color: blue;
+  color: black;
   margin-top: 0.5rem; /* optional spacing from last image */
   display: inline-block;
 }
@@ -35,5 +35,6 @@ header {
     font-weight: light;
     src: url("DepartureMonoNerdFont-Regular.otf") format("opentype");
 }
+
 
 
