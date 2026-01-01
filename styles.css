@@ -27,12 +27,13 @@ header {
 
 @font-face {
     font-family: DepartureMono;
-    src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+    src: url("DepartureMonoNerdFont-Regular.otf") format("opentype");
 }
 
 @font-face {
     font-family: DepartureMono;
     font-weight: light;
-    src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+    src: url("DepartureMonoNerdFont-Regular.otf") format("opentype");
 }
+
 
