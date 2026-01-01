@@ -1,0 +1,38 @@
+
+body {
+    color: black;
+    background-color: white; 
+    font-family: DepartureMono; 
+    letter-spacing: -0.9px;
+}
+
+a {
+  color: black; 
+  text-decoration: none;
+}
+
+.column a {
+  text-decoration: underline;
+  color: blue;
+  margin-top: 0.5rem; /* optional spacing from last image */
+  display: inline-block;
+}
+
+
+header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+@font-face {
+    font-family: DepartureMono;
+    src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: DepartureMono;
+    font-weight: light;
+    src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+}
+
