@@ -1,37 +1,97 @@
 <!DOCTYPE html>
+<html lang="en">
 
 <!-- website inspiration from:
   https://9front.org/
   https://jvscholz.com/
+  https://b9r.me/
 -->
-  
-<title>julian pineda</title>
-<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-<html>
-<style>
-body {top: 0; left: 0; width: 99%; height: 97%;
-    position: absolute; display: table}
-  p {display: table-cell; vertical-align: middle; text-align: center}
-</style>
+<head>
+  <meta charset="UTF-8">
+  <title>julian</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <!-- external styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- inline styles -->
+  <style>
+    * {
+      cursor: url(cursor.png), auto;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 37px;
+      margin-bottom: 1rem;
+      font-weight: normal;
+    }
+
+    img {
+      width: 512px;
+      max-width: 100%;
+      height: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      margin: 0 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>julian</h1>
+
+    <img src="pictures/main-photo.jpg" alt="main photo">
 
 
-<p>
-<font size="8"><i><b>julian pineda</b></i></font> <br>
-<br>
-<img src="https://i.imgur.com/Po8TiqD.jpeg" style="width:512px;"><br>
-<br>
+    <script type="text/javascript">
+    // declare time zone formatting
+    let options = {
+        timeZone: 'US/Pacific',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric',
+    },
+    formatter = new Intl.DateTimeFormat([], options);
 
-<a href="/aboutme.html">>>about</a> |
-<a href="/contact.html">>>contact</a> |
-<a href="/inspiration.html">>>inspo</a>
+    // set time
+    setInterval(
+        () => {
+            document.querySelector("#time").innerText = formatter.format(new Date());
+        }
+    , 1000)
+</script>
 
-<br>
-<a href="https://plannedparenthood.org" target="_b"></a> 
-  <img src="/abort.png" border="0">
-<br>
-<a href="https://palestinecampaign.org/" taget="_b"</a>
-  <img src="/killing.png" border="0">
+  <!-- Time section -->
+  <div class="time">
+    <i>
+      <a href="https://24timezones.com/world_directory/current_california_time.php">time in california</a> - 
+      <span id="time">0:00 PM</span> 
+      <a href="https://24timezones.com/time-zone/pst">pst</a>
+    </i>
+  </div>
+
+    <nav>
+      <br>
+      <a href="aboutme.html">&gt;&gt;about</a> |
+      <a href="socials.html">&gt;&gt;socials</a> |
+      <a href="misc.html">&gt;&gt;misc.</a>
+    </nav>
+  </main>
+</body>
 
 </html>
