@@ -53,6 +53,11 @@ header {
   font-size: 21px
 }
 
+.counter img {
+  width: 100px;
+  height: auto;
+}
+
 /* @font-face {
     font-family: DepartureMono;
     src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
@@ -74,3 +79,4 @@ header {
     font-weight: light;
     src: url("fonts/vertopal.com_Bm437_DOS-V_re_ANK30.ttf") format("opentype");
 }
+
