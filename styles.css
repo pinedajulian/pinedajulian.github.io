@@ -1,21 +1,45 @@
 
 body {
-    color: black;
-    background-color: white; 
-    font-family: DepartureMono; 
+    color: white;
+  background-image: url("grid.jpg");
+  background-repeat: repeat;
+    font-family: IBM; 
     letter-spacing: -0.9px;
 }
 
 a {
-  color: black; 
+  color: white; 
   text-decoration: none;
 }
 
 .column a {
   text-decoration: underline;
-  color: black;
+  color: white;
   margin-top: 0.5rem; /* optional spacing from last image */
   display: inline-block;
+}
+
+.box {
+  background-color: black;
+  border: 1px solid grey;
+  padding-left: 13%;
+  padding-right: 13%;
+  padding-bottom: 3%;
+}
+
+.box2 {
+  background-color: black;
+  border: 1px solid grey;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
+  padding-top: 1%
+}
+
+.ps {
+  font-style: italic;
+  font-size: medium,;
+  color: gray;
 }
 
 
@@ -25,16 +49,28 @@ header {
   left: 10px;
 }
 
-@font-face {
+.time {
+  font-size: 21px
+}
+
+/* @font-face {
     font-family: DepartureMono;
-    src: url("DepartureMonoNerdFont-Regular.otf") format("opentype");
+    src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
 }
 
 @font-face {
     font-family: DepartureMono;
     font-weight: light;
-    src: url("DepartureMonoNerdFont-Regular.otf") format("opentype");
+    src: url("fonts/DepartureMonoNerdFont-Regular.otf") format("opentype");
+} */
+
+@font-face {
+    font-family: IBM;
+    src: url("fonts/vertopal.com_Bm437_DOS-V_re_ANK30.ttf") format("opentype");
 }
 
-
-
+@font-face {
+    font-family: IBM;
+    font-weight: light;
+    src: url("fonts/vertopal.com_Bm437_DOS-V_re_ANK30.ttf") format("opentype");
+}
