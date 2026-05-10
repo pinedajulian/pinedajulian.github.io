@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>(ᵕ—ᴗ—)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+  <style>
+    * {
+      cursor: url(assets/cursor.png), auto;
+    }
+</style>
+
+<body>
+
+    <h1>
+    <a id="home-link" href="index.html">julian</a>
+    </h1>
+
+    <div id="container">
+
+        <nav id="sidebar">
+            <ul>
+                <li>
+                    <a href="meow.html">> <span>about</span></a>
+                </li>
+                <li>
+                    <a href="socials.html">> <span >socials</span></a>
+                </li>             
+                <li>
+                    <a href="tech.html">> <span >tech</span></a>
+                </li>
+                <li>
+                    <a href="misc.html">> <span class="active">misc</span></a>
+                </li>                   
+            </ul>
+        </nav>
+
+        <article>
+            <p><i>currently a work in progress, so for now, here are some useful websites;</i><br></p>
+            <p>
+            <a href="https://fmhy.net/">fmhy.net/</a> - a HUGE index of free media that i use almost daily. <br>
+            <a href="https://tuxmate.com/">tuxmate.com/</a> - like Ninite, but for linux systems. <br>
+            <a href="https://deskto.ps/">deskto.ps/</a> - user submitted screenshots of desktops.
+            </p> 
+            
+            
+        </article>
+
+
+    </div>
+
+<script>
+document.querySelectorAll('a').forEach(link => {
+  if (link.hostname !== window.location.hostname) {
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+  }
+});
+</script>
+
+</body>
+
+</html>
