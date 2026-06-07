@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>(ᵕ—ᴗ—)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    * {
+        cursor: url(assets/cursor.png), auto;
+    }
+</style>
+
+<body>
+
+    <h1>
+        <a id="home-link" href="index.html">julian</a>
+    </h1>
+
+    <div id="container">
+
+        <nav id="sidebar">
+            <ul>
+                <li>
+                    <a href="meow.html">> <span>about</span></a>
+                </li>
+                <li>
+                    <a href="socials.html">> <span>socials</span></a>
+                </li>
+                <li>
+                    <a href="tech.html">> <span>tech</span></a>
+                </li>
+                <li>
+                    <a href="misc.html">> <span>misc</span></a>
+                </li>
+                <li>
+                    <a href="skins.html">> <span class="active">skins</span></a>
+                </li>                
+            </ul>
+        </nav>
+<div id="photos">
+
+    <div class="photo-entry">
+        <img src="assets/skin-screenshots/elohere.jpg" alt="">
+        <div class="photo-text">
+            <h3>elohere</h3>
+            <p><a href="https://replica.s-ul.eu/8hxaIl33">elohere</a> <br>
+            <a href="https://replica.s-ul.eu/g1ZD0ZKc">elohere (bees)</a> <br>
+            <a href="https://replica.s-ul.eu/D4INXWex">elohere (rafis)</a> <br>
+            <a href="https://replica.s-ul.eu/2RkIZkHb">elohere (www)</a> <br>            
+            </p>
+        </div>
+    </div>
+
+    <div class="photo-entry">
+        <img src="assets/skin-screenshots/rafissss.jpg" alt="">
+        <div class="photo-text">
+            <h3>rafissss</h3>
+            <p><a href="https://replica.s-ul.eu/yXTLtd0i">rafissss</a></p>
+        </div>
+    </div>
+
+    <div class="photo-entry">
+        <img src="assets/skin-screenshots/gn.jpg" alt="">
+        <div class="photo-text">
+            <h3>gn</h3>
+            <p><a href="https://replica.s-ul.eu/D6drqnbW">gn 8 color rainbow</a></p>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+<div id="image-modal">
+    <img id="modal-image" src="" alt="">
+</div>
+
+<script>
+const modal = document.getElementById('image-modal');
+const modalImg = document.getElementById('modal-image');
+
+document.querySelectorAll('.photo-entry img').forEach(img => {
+    img.addEventListener('click', () => {
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+    });
+});
+
+modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+</script>
+
+    <script>
+        document.querySelectorAll('a').forEach(link => {
+            if (link.hostname !== window.location.hostname) {
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+            }
+        });
+    </script>
+
+     <script data-goatcounter="https://replica.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>  
+
+</body>
+
+</html>
