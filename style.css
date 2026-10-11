@@ -1,6 +1,6 @@
  @font-face {
   font-family: "MS Gothic";
-  src: url("./assets/MSGOTHIC.ttf") format("truetype");
+  src: url("./assets/MSGOTHIC.TTF") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
