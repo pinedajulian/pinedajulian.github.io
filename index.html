@@ -4,40 +4,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> u_u</title>
-  <link rel="stylesheet" href="style.css">
-  <link
+  <title> /home/j </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+  <!-- <link
   rel="preload"
   href="assets/MSGOTHIC.ttf"
   as="font"
   type="font/ttf"
   crossorigin
->
+> -->
 <link rel="prefetch" href="index.html">
 <link rel="prefetch" href="about.html">
 <link rel="prefetch" href="tech.html">
 <link rel="prefetch" href="blog.html">
 <link
   rel="preload"
-  href="assets/pfp.png"
+  href="assets/ayana.jpg"
   as="image"
 >
 <style type="text/css">
 </style>
 </head>
 <body>
+  <div id="clock"></div>
+
   <main class="card">
     <section class="intro">
       <img
         class="profile-picture"
-        src="assets/kimika.jpg"
+        src="assets/ayana.jpg"
         alt="hi"
       >
 
       <div class="profile-text">
-        <h1>JULIAN</h1>
-        <p>hi, my name is julian.  i made this website out of boredom and wanted to create my own space on the internet.
-      you can check out the navigation bar on the bottom to see everything else. thanks for stopping by!! 
+        <h1>julian</h1>
+        <p>student / computer enthusiast <br> <br>
+          forever a work in progress<br>
         </p>
       </div>
     </section>
@@ -49,6 +54,13 @@
       <a href="blog.html">blog</a>
     </nav>
 
+        <!-- <br>
+    <div class="marquee-container">
+  <marquee behavior="scroll" direction="left" scrollamount="5" loop="infinite">
+    (・ω・)  (｡-_-｡) (ﾉ´ヮ`)ﾉ*: ･ﾟ (⁠￣⁠▽⁠￣⁠)⁠ノ (=^･ω･^=) (⁠ᵕ⁠—⁠ᴗ⁠—⁠) (⁠￣⁠ヘ⁠￣⁠)
+  </marquee>
+    </div> -->
+
   </main>
   
 <footer class="social-links">
@@ -59,7 +71,7 @@
     <img src="assets/osu-logo.png" alt="osu!">
   </a>
 
-  <a href="https://www.instagram.com/julianshucks/"
+  <a href="https://www.instagram.com/qanonglowie/"
      target="_blank"
      rel="noopener noreferrer"
      aria-label="Instagram">
@@ -74,7 +86,35 @@
   </a>
 </footer>
 
-</body>
+<script>
+  function updateJapaneseClock() {
+    const now = new Date();
+    const options = {
+      timeZone: "America/Los_Angeles"
+    };
 
+    const date = new Intl.DateTimeFormat("ja-JP", {
+      ...options,
+      year: "numeric",
+      month: "numeric",
+      day: "numeric"
+    }).format(now);
+
+    const time = new Intl.DateTimeFormat("ja-JP", {
+      ...options,
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23"
+    }).format(now);
+
+    document.getElementById("clock").textContent =
+      `${date.replace(/\//g, "年").replace(/年(\d+)月/, "年$1月").replace(/月(\d+)$/, "月$1日")} ${time}`;
+  }
+
+  updateJapaneseClock();
+  setInterval(updateJapaneseClock, 1000);
+</script>
+
+</body>
 
 </html>
