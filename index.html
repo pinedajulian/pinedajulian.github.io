@@ -1,120 +1,83 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> /home/j </title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-  <!-- <link
-  rel="preload"
-  href="assets/MSGOTHIC.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-> -->
-<link rel="prefetch" href="index.html">
-<link rel="prefetch" href="about.html">
-<link rel="prefetch" href="tech.html">
-<link rel="prefetch" href="blog.html">
-<link
-  rel="preload"
-  href="assets/ayana.jpg"
-  as="image"
->
-<style type="text/css">
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f2f1ec">
+  <title>/home/j</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="about.html">
+  <link rel="prefetch" href="tech.html">
+  <link rel="prefetch" href="blog.html">
+  <link rel="preload" href="assets/ayana.jpg" as="image">
 </head>
 <body>
-  <div id="clock"></div>
+  <div class="site-shell">
+    <header class="topbar">
+      <span class="location">/home/j</span>
+      <time id="clock" aria-label="Current date and time"></time>
+    </header>
 
-  <main class="card">
-    <section class="intro">
-      <img
-        class="profile-picture"
-        src="assets/ayana.jpg"
-        alt="hi"
-      >
+<main class="home-layout page-layout">
+        <section class="identity" aria-labelledby="name">
+        <div class="identity-text">
+          <h1 id="name">julian</b></i></h1>
+          <p class="description">student</p>
+          <p class="motto">til the end sky</p>
+        </div>
+        <!-- <div class="portrait-wrap">
+          <img class="profile-picture" src="assets/ayana.jpg" alt="Profile portrait">
+        </div> -->
+      </section>
 
-      <div class="profile-text">
-        <h1>julian</h1>
-        <p>student / computer enthusiast <br> <br>
-          til the end sky<br>
-        </p>
-      </div>
-    </section>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/" aria-current="page"><span class="nav-number"></span><span>home</span><span class="nav-arrow"></span></a>
+        <a href="about.html"><span class="nav-number"></span><span>about</span><span class="nav-arrow"></span></a>
+        <a href="tech.html"><span class="nav-number"></span><span>tech</span><span class="nav-arrow"></span></a>
+        <a href="blog.html"><span class="nav-number"></span><span>blog</span><span class="nav-arrow"></span></a>
+      </nav>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="/">home</a>
-      <a href="about.html">about</a>
-      <a href="tech.html">tech</a>
-      <a href="blog.html">blog</a>
-    </nav>
-
-        <!-- <br>
-    <div class="marquee-container">
-  <marquee behavior="scroll" direction="left" scrollamount="5" loop="infinite">
-    (・ω・)  (｡-_-｡) (ﾉ´ヮ`)ﾉ*: ･ﾟ (⁠￣⁠▽⁠￣⁠)⁠ノ (=^･ω･^=) (⁠ᵕ⁠—⁠ᴗ⁠—⁠) (⁠￣⁠ヘ⁠￣⁠)
-  </marquee>
-    </div> -->
-
-  </main>
-  
-<footer class="social-links">
+<div class="social-links" aria-label="Social links">
   <a href="https://osu.ppy.sh/users/20577414"
      target="_blank"
-     rel="noopener noreferrer"
-     aria-label="osu!">
-    <img src="assets/osu-logo.png" alt="osu!">
-  </a>
+     rel="noopener noreferrer">/osu</a>
 
   <a href="https://www.instagram.com/qanonglowie/"
      target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Instagram">
-    <img src="assets/instagram-logo.png" alt="Instagram">
-  </a>
+     rel="noopener noreferrer">/instagram</a>
 
   <a href="https://discord.com/users/724867763046449233"
      target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Discord">
-    <img src="assets/discord-logo.png" alt="Discord">
-  </a>
-</footer>
+     rel="noopener noreferrer">/discord</a>
+</div>
+    </main>
 
-<script>
-  function updateJapaneseClock() {
-    const now = new Date();
-    const options = {
-      timeZone: "America/Los_Angeles"
-    };
+  </div>
 
-    const date = new Intl.DateTimeFormat("ja-JP", {
-      ...options,
-      year: "numeric",
-      month: "numeric",
-      day: "numeric"
-    }).format(now);
+  <script>
+    function updateJapaneseClock() {
+      const now = new Date();
+      const options = { timeZone: "America/Los_Angeles" };
+      const parts = new Intl.DateTimeFormat("ja-JP-u-ca-gregory", {
+        ...options,
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+      }).formatToParts(now);
+      const part = (type) => parts.find((item) => item.type === type)?.value ?? "";
+      const date = `${part("year")}年${part("month")}月${part("day")}日`;
+      const time = new Intl.DateTimeFormat("ja-JP", {
+        ...options,
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23"
+      }).format(now);
+      document.getElementById("clock").textContent = `${date} ${time}`;
+    }
 
-    const time = new Intl.DateTimeFormat("ja-JP", {
-      ...options,
-      hour: "2-digit",
-      minute: "2-digit",
-      hourCycle: "h23"
-    }).format(now);
-
-    document.getElementById("clock").textContent =
-      `${date.replace(/\//g, "年").replace(/年(\d+)月/, "年$1月").replace(/月(\d+)$/, "月$1日")} ${time}`;
-  }
-
-  updateJapaneseClock();
-  setInterval(updateJapaneseClock, 1000);
-</script>
-
+    updateJapaneseClock();
+    setInterval(updateJapaneseClock, 30000);
+  </script>
 </body>
-
 </html>

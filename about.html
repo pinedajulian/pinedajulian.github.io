@@ -1,46 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title> /home/j/about </title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <title>/home/j/about</title>
   <link rel="stylesheet" href="style.css">
-<!-- <link
-  rel="preload"
-  href="assets/MSGOTHIC.ttf"
-  as="font"
-  type="font/ttf"
-  crossorigin
-> -->
-<link rel="prefetch" href="index.html">
-<link rel="prefetch" href="about.html">
-<link rel="prefetch" href="tech.html">
-<link rel="prefetch" href="blog.html">
+  <link rel="prefetch" href="index.html">
+  <link rel="prefetch" href="tech.html">
+  <link rel="prefetch" href="blog.html">
 </head>
 <body>
-  <main class="card page-card">
-    <section class="page-content">
-      <h2>about</h2>
-      <p> i'm julian, i'm attending community college in Berkeley for computer information systems.
-        i really like vintage computers & unix/unix-like operating systems. i play osu!, minecraft,
-        overwatch, and umamusume.</p> 
-      <h2>anime</h2>
-      <p>welcome to the nhk, violet evergarden, the apothecary diaries, adachi and shimamura</p>
-      <h2>music</h2>
-      <p>round table feat. nino, nujabes, sayako, diegointhedark, dj sharpnel</p>
-      <p></p>
-    </section>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="location" href="/">/home/j</a>
+      <time id="clock" aria-label="Current date and time"></time>
+    </header>
 
-    <nav class="nav" aria-label="Main navigation">
-      <a href="/">home</a>
-      <a href="about.html">about</a>
-      <a href="tech.html">tech</a>
-      <a href="blog.html">blog</a>
-    </nav>
-  </main>
+<main class="home-layout about-layout page-layout">
+          <section class="page-content" aria-labelledby="page-title">
+        <h2 id="page-title">about</h2>
 
+        <p>
+          i'm julian, i'm attending community college in Berkeley for
+          computer information systems. i really like vintage computers
+          & unix/unix-like operating systems. i play osu!, minecraft,
+          overwatch, and umamusume.
+        </p>
+
+        <h2>anime</h2>
+        <p>
+          welcome to the nhk, violet evergarden, the apothecary diaries,
+          adachi and shimamura
+        </p>
+
+        <h2>music</h2>
+        <p>
+          round table feat. nino, nujabes, sayako, diegointhedark,
+          dj sharpnel
+        </p>
+      </section>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="/">
+          <span class="nav-number"></span>
+          <span>home</span>
+          <span class="nav-arrow"></span>
+        </a>
+        <a href="about.html" aria-current="page">
+          <span class="nav-number"></span>
+          <span>about</span>
+          <span class="nav-arrow"></span>
+        </a>
+        <a href="tech.html">
+          <span class="nav-number"></span>
+          <span>tech</span>
+          <span class="nav-arrow"></span>
+        </a>
+        <a href="blog.html">
+          <span class="nav-number"></span>
+          <span>blog</span>
+          <span class="nav-arrow"></span>
+        </a>
+      </nav>
+
+      <footer class="social-links" aria-label="Social links">
+        <a href="https://osu.ppy.sh/users/20577414"
+           target="_blank"
+           rel="noopener noreferrer">/osu</a>
+        <a href="https://www.instagram.com/qanonglowie/"
+           target="_blank"
+           rel="noopener noreferrer">/instagram</a>
+        <a href="https://discord.com/users/724867763046449233"
+           target="_blank"
+           rel="noopener noreferrer">/discord</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    function updateJapaneseClock() {
+      const now = new Date();
+      const options = { timeZone: "America/Los_Angeles" };
+
+      const parts = new Intl.DateTimeFormat("ja-JP-u-ca-gregory", {
+        ...options,
+        year: "numeric",
+        month: "numeric",
+        day: "numeric"
+      }).formatToParts(now);
+
+      const part = (type) =>
+        parts.find((item) => item.type === type)?.value ?? "";
+
+      const date =
+        `${part("year")}年${part("month")}月${part("day")}日`;
+
+      const time = new Intl.DateTimeFormat("ja-JP", {
+        ...options,
+        hour: "2-digit",
+        minute: "2-digit",
+        hourCycle: "h23"
+      }).format(now);
+
+      document.getElementById("clock").textContent =
+        `${date} ${time}`;
+    }
+
+    updateJapaneseClock();
+    setInterval(updateJapaneseClock, 30000);
+  </script>
 </body>
 </html>
